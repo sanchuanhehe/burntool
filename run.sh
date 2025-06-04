@@ -1,4 +1,9 @@
 #!/bin/bash
+# 检测是否安装了 Wine
+if ! command -v wine &> /dev/null; then
+    echo "Wine 未安装，请先安装 Wine。"
+    exit 1
+fi
 # 设置 Wine 沙盒路径
 export WINEPREFIX="$PWD/wineprefix"
 # export WINEDEBUG=-all  # 可选，禁用 Wine 日志
